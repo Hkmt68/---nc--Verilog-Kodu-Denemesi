@@ -7,67 +7,120 @@
 :vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
 :vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
 :vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
-S_000001731112ceb0 .scope module, "LFSR_code" "LFSR_code" 2 3;
+S_000001eab421ba70 .scope module, "LFSR_code_tb" "LFSR_code_tb" 2 5;
+ .timescale -9 -12;
+v000001eab42b1800_0 .net "Q", 0 0, L_000001eab42b1e40;  1 drivers
+v000001eab42b1260_0 .var "clk", 0 0;
+v000001eab42b1760_0 .var/i "f", 31 0;
+v000001eab42b1c60_0 .var/i "i", 31 0;
+v000001eab42b18a0_0 .var "load_enable", 0 0;
+v000001eab42b1b20_0 .var "seed", 31 0;
+v000001eab42b1580_0 .var "shift_enable", 0 0;
+S_000001eab421ceb0 .scope module, "LFSR_code_tb" "LFSR_code" 2 13, 3 3 0, S_000001eab421ba70;
  .timescale -9 -12;
     .port_info 0 /INPUT 1 "clk";
     .port_info 1 /OUTPUT 1 "Q";
     .port_info 2 /INPUT 1 "load_enable";
     .port_info 3 /INPUT 1 "shift_enable";
     .port_info 4 /INPUT 32 "seed";
-L_000001731104a3a0 .functor XOR 1, L_000001731108d060, L_000001731108dc40, C4<0>, C4<0>;
-L_000001731104a640 .functor XOR 1, L_000001731108d1a0, L_000001731104a3a0, C4<0>, C4<0>;
-L_000001731104a6b0 .functor XOR 1, L_000001731108de20, L_000001731104a640, C4<0>, C4<0>;
-v0000017311128b70_0 .net "Q", 0 0, L_000001731108d560;  1 drivers
-v0000017311012ef0_0 .var "Q_reg", 31 0;
-v000001731112ba40_0 .net *"_ivl_10", 0 0, L_000001731104a3a0;  1 drivers
-v000001731112bae0_0 .net *"_ivl_12", 0 0, L_000001731104a640;  1 drivers
-v000001731112bb80_0 .net *"_ivl_3", 0 0, L_000001731108de20;  1 drivers
-v000001731112bc20_0 .net *"_ivl_5", 0 0, L_000001731108d1a0;  1 drivers
-v000001731108d600_0 .net *"_ivl_7", 0 0, L_000001731108d060;  1 drivers
-v000001731108d880_0 .net *"_ivl_9", 0 0, L_000001731108dc40;  1 drivers
-o000001731104c128 .functor BUFZ 1, C4<z>; HiZ drive
-v000001731108df60_0 .net "clk", 0 0, o000001731104c128;  0 drivers
-o000001731104c158 .functor BUFZ 1, C4<z>; HiZ drive
-v000001731108d7e0_0 .net "load_enable", 0 0, o000001731104c158;  0 drivers
-o000001731104c188 .functor BUFZ 32, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
-v000001731108d6a0_0 .net "seed", 31 0, o000001731104c188;  0 drivers
-o000001731104c1b8 .functor BUFZ 1, C4<z>; HiZ drive
-v000001731108d740_0 .net "shift_enable", 0 0, o000001731104c1b8;  0 drivers
-v000001731108dba0_0 .net "taps", 0 0, L_000001731104a6b0;  1 drivers
-E_0000017311049ba0 .event posedge, v000001731108df60_0;
-L_000001731108d560 .part v0000017311012ef0_0, 31, 1;
-L_000001731108de20 .part v0000017311012ef0_0, 31, 1;
-L_000001731108d1a0 .part v0000017311012ef0_0, 20, 1;
-L_000001731108d060 .part v0000017311012ef0_0, 1, 1;
-L_000001731108dc40 .part v0000017311012ef0_0, 0, 1;
-    .scope S_000001731112ceb0;
+L_000001eab426a170 .functor XOR 1, L_000001eab42b1d00, L_000001eab42b11c0, C4<0>, C4<0>;
+L_000001eab426a720 .functor XOR 1, L_000001eab42b1940, L_000001eab426a170, C4<0>, C4<0>;
+L_000001eab426a1e0 .functor XOR 1, L_000001eab42b1080, L_000001eab426a720, C4<0>, C4<0>;
+v000001eab421bc00_0 .net "Q", 0 0, L_000001eab42b1e40;  alias, 1 drivers
+v000001eab421bca0_0 .var "Q_reg", 31 0;
+v000001eab4232ef0_0 .net *"_ivl_10", 0 0, L_000001eab426a170;  1 drivers
+v000001eab421d040_0 .net *"_ivl_12", 0 0, L_000001eab426a720;  1 drivers
+v000001eab421d0e0_0 .net *"_ivl_3", 0 0, L_000001eab42b1080;  1 drivers
+v000001eab421d180_0 .net *"_ivl_5", 0 0, L_000001eab42b1940;  1 drivers
+v000001eab42b1bc0_0 .net *"_ivl_7", 0 0, L_000001eab42b1d00;  1 drivers
+v000001eab42b1300_0 .net *"_ivl_9", 0 0, L_000001eab42b11c0;  1 drivers
+v000001eab42b1da0_0 .net "clk", 0 0, v000001eab42b1260_0;  1 drivers
+v000001eab42b1440_0 .net "load_enable", 0 0, v000001eab42b18a0_0;  1 drivers
+v000001eab42b1120_0 .net "seed", 31 0, v000001eab42b1b20_0;  1 drivers
+v000001eab42b16c0_0 .net "shift_enable", 0 0, v000001eab42b1580_0;  1 drivers
+v000001eab42b14e0_0 .net "taps", 0 0, L_000001eab426a1e0;  1 drivers
+E_000001eab4255af0 .event posedge, v000001eab42b1da0_0;
+L_000001eab42b1e40 .part v000001eab421bca0_0, 31, 1;
+L_000001eab42b1080 .part v000001eab421bca0_0, 31, 1;
+L_000001eab42b1940 .part v000001eab421bca0_0, 20, 1;
+L_000001eab42b1d00 .part v000001eab421bca0_0, 1, 1;
+L_000001eab42b11c0 .part v000001eab421bca0_0, 0, 1;
+    .scope S_000001eab421ceb0;
 T_0 ;
-    %wait E_0000017311049ba0;
-    %load/vec4 v000001731108d7e0_0;
+    %wait E_000001eab4255af0;
+    %load/vec4 v000001eab42b1440_0;
     %flag_set/vec4 8;
     %jmp/0xz  T_0.0, 8;
-    %load/vec4 v000001731108d6a0_0;
-    %assign/vec4 v0000017311012ef0_0, 0;
+    %load/vec4 v000001eab42b1120_0;
+    %assign/vec4 v000001eab421bca0_0, 0;
     %jmp T_0.1;
 T_0.0 ;
-    %load/vec4 v000001731108d740_0;
+    %load/vec4 v000001eab42b16c0_0;
     %flag_set/vec4 8;
     %jmp/0xz  T_0.2, 8;
-    %load/vec4 v0000017311012ef0_0;
+    %load/vec4 v000001eab421bca0_0;
     %parti/s 31, 0, 2;
-    %load/vec4 v000001731108dba0_0;
+    %load/vec4 v000001eab42b14e0_0;
     %concat/vec4; draw_concat_vec4
-    %assign/vec4 v0000017311012ef0_0, 0;
+    %assign/vec4 v000001eab421bca0_0, 0;
     %jmp T_0.3;
 T_0.2 ;
-    %load/vec4 v0000017311012ef0_0;
-    %assign/vec4 v0000017311012ef0_0, 0;
+    %load/vec4 v000001eab421bca0_0;
+    %assign/vec4 v000001eab421bca0_0, 0;
 T_0.3 ;
 T_0.1 ;
     %jmp T_0;
     .thread T_0;
+    .scope S_000001eab421ba70;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001eab42b1260_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001eab42b1260_0, 0, 1;
+    %delay 10000, 0;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_000001eab421ba70;
+T_2 ;
+    %vpi_func 2 23 "$fopen" 32, "verilog_lfsr_out", "w" {0 0 0};
+    %store/vec4 v000001eab42b1760_0, 0, 32;
+    %vpi_call 2 24 "$dumpfile", "LFSR_code_tb.vcd" {0 0 0};
+    %vpi_call 2 25 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001eab421ceb0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001eab42b1260_0, 0, 1;
+    %pushi/vec4 12345, 0, 32;
+    %store/vec4 v000001eab42b1b20_0, 0, 32;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001eab42b18a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001eab42b1580_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001eab42b18a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001eab42b1580_0, 0, 1;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v000001eab42b1c60_0, 0, 32;
+T_2.0 ;
+    %load/vec4 v000001eab42b1c60_0;
+    %cmpi/s 200, 0, 32;
+    %jmp/0xz T_2.1, 5;
+    %delay 20000, 0;
+    %wait E_000001eab4255af0;
+    %vpi_call 2 37 "$fwrite", v000001eab42b1760_0, "%b\012", v000001eab42b1800_0 {0 0 0};
+    %load/vec4 v000001eab42b1c60_0;
+    %addi 1, 0, 32;
+    %store/vec4 v000001eab42b1c60_0, 0, 32;
+    %jmp T_2.0;
+T_2.1 ;
+    %vpi_call 2 39 "$fclose", v000001eab42b1760_0 {0 0 0};
+    %vpi_call 2 40 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
 # The file index is used to find the file name in the following table.
-:file_names 3;
+:file_names 4;
     "N/A";
     "<interactive>";
+    "LFSR_code_tb.v";
     "./LFSR_code.v";
